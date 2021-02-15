@@ -20,8 +20,8 @@ jobs:
         mkdir public
         cp -r result/* public/
         chown -R $(id -u):$(id -g) public
-        find public -type d -exec chmod 755 {} \;
-        find public -type f -exec chmod 644 {} \;
+        find . -type d -exec chmod 755 {} \;
+        find . -type f -exec chmod 644 {} \;
         id -a
         ls -lR .
     - name: GitHub Pages Deploy
