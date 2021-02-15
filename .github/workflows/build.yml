@@ -16,14 +16,16 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
     - name: Build
       run: |
-        nix build
-        mkdir public
-        cp -r result/* public/
-        chown -R $(id -u):$(id -g) public
-        find . -type d -exec chmod 755 {} \;
-        find . -type f -exec chmod 644 {} \;
-        id -a
-        ls -lR .
+        echo $GITHUB_WORKSPACE
+        pwd
+        # nix build
+        # mkdir public
+        # cp -r result/* public/
+        # chown -R $(id -u):$(id -g) public
+        # find . -type d -exec chmod 755 {} \;
+        # find . -type f -exec chmod 644 {} \;
+        # id -a
+        # ls -lR .
     - name: GitHub Pages Deploy
       uses: JamesIves/github-pages-deploy-action@4.0.0
       with:
